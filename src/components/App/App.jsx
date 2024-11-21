@@ -18,7 +18,7 @@ function App() {
         setGuestList(response.data)
       })
       .catch(err => {
-        alert('error getting guests');
+        // alert('error getting guests');
         console.log(err);
       })
   }
@@ -51,8 +51,9 @@ function App() {
   }
 
   console.log(newGuestMeal)
+
   return (
-    <div className="App">
+    <div className="App notice">
       <header>
         <h1>Prim Proper Props</h1>
       </header>
@@ -70,7 +71,7 @@ function App() {
           onChange={(evt) => setNewGuestName(evt.target.value)}
         />
         <div>
-          Would this guest like a kid's meal?
+          <p>Would this guest like a kid's meal?</p>
           <div >
             <div>
               <label>
@@ -98,10 +99,12 @@ function App() {
             </div>
           </div>
         </div>
+        <br />
         <button type="submit">Add Guest</button>
       </form>
       <h2>Guest List</h2>
-      <table>
+      
+      <table style={{width: '100%'}}>
         <thead>
           <tr>
             <th>Name</th>
